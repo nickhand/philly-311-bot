@@ -4,10 +4,10 @@ import abc
 import os
 
 MAX_LENGTH = 230
-YESTERDAY = (
-    pd.to_datetime("today").tz_localize("US/Eastern") - pd.Timedelta("1 day")
-).strftime("%m/%d/%Y")
-TODAY = pd.to_datetime("today").tz_localize("US/Eastern").strftime("%m/%d/%Y")
+YESTERDAY = (pd.Timestamp.today(tz="US/Eastern") - pd.Timedelta("1 day")).strftime(
+    "%m/%d/%Y"
+)
+TODAY = pd.Timestamp.today(tz="US/Eastern").strftime("%m/%d/%Y")
 
 
 def load_neighborhoods():
