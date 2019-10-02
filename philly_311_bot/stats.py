@@ -30,7 +30,7 @@ def yesterdays_date():
     def custom_strftime(format, t):
         return t.strftime(format).replace("{S}", str(t.day) + suffix(t.day))
 
-    yesterday = pd.to_datetime("today") - pd.Timedelta("1 day")
+    yesterday = pd.Timestamp.today(tz="US/Eastern") - pd.Timedelta("1 day")
     return custom_strftime("%B {S}", yesterday)
 
 
