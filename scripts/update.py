@@ -1,9 +1,9 @@
 from philly_311_bot.db import CartoDB
-from phily_311_bot.config import *
+from philly_311_bot.config import *
+from philly_311_bot import stats
 import pandas as pd
 import tweepy
 import time
-import stats
 
 if __name__ == "__main__":
 
